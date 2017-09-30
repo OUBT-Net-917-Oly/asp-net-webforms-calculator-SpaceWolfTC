@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms_Calculator", "WebApplication1_empty\WebForms_Calculator.csproj", "{58C359BD-BAC4-45D0-A836-C8E11425F2C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms_Calculator", "WebForms_Calculator\WebForms_Calculator.csproj", "{58C359BD-BAC4-45D0-A836-C8E11425F2C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
