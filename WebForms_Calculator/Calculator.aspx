@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <%--Implement this as a asp.net webforms application--%>
-            <h1>JavaScript Calculator</h1>
+            <h1>ASP Calculator</h1>
             <br />
 
             <label>Number 1: </label>
@@ -20,22 +20,26 @@
 
             <label>Number 2: </label>
             <%--convert this to an asp.net textbox--%>
-            <input type="text" id="number2" />
+            <asp:TextBox ID="Number2" runat="server" />
             <br />
             <br />
 
             <%--convert these buttons to a asp.net button with an OnClickEvent--%>
             <asp:Button ID="btnAdd" Text="+" OnClick="btnAdd_Click" runat="server" />
-            <input type="button" value="-" onclick="" />
-            <input type="button" value="x" onclick="" />
-            <input type="button" value="/" onclick="" />
+            <asp:Button ID="btnSub" Text="-" OnClick="btnSub_Click" runat="server" />
+            <asp:Button ID="btnMul" Text="x" OnClick="btnMul_Click" runat="server" />
+            <asp:Button ID="btnDiv" Text="/" OnClick="btnDiv_Click" runat="server" />
+
             <br />
             <br />
 
             <label>Result: </label>
             <%--convert to an asp:Label--%>
-            <input type="text" id="result" />
+            <asp:TextBox ID="result" runat="server" />
         </div>
     </form>
+
+ 
+   
 </body>
 </html>
