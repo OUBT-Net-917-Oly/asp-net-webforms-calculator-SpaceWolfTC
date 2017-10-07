@@ -14,21 +14,21 @@
             <br />
 
             <label>Number 1: </label>
-            <asp:TextBox ID="Number1" runat="server" />
+            <asp:TextBox Name="n1" ID="Number1" runat="server" />
             <br />
             <br />
 
             <label>Number 2: </label>
             <%--convert this to an asp.net textbox--%>
-            <asp:TextBox ID="Number2" runat="server" />
+            <asp:TextBox Name="n2" ID="Number2" runat="server" />
             <br />
             <br />
 
             <%--convert these buttons to a asp.net button with an OnClickEvent--%>
-            <asp:Button ID="btnAdd" Text="+" OnClick="btnAdd_Click" runat="server" />
-            <asp:Button ID="btnSub" Text="-" OnClick="btnSub_Click" runat="server" />
-            <asp:Button ID="btnMul" Text="x" OnClick="btnMul_Click" runat="server" />
-            <asp:Button ID="btnDiv" Text="/" OnClick="btnDiv_Click" runat="server" />
+            <asp:Button ID="btnAdd"  Text="+" OnClick="doMath" runat="server" />
+            <asp:Button ID="btnSub"  Text="-" OnClick="doMath" runat="server" />
+            <asp:Button ID="btnMul"  Text="x" OnClick="doMath" runat="server" />
+            <asp:Button ID="btnDiv"  Text="/" OnClick="doMath" runat="server" />
 
             <br />
             <br />

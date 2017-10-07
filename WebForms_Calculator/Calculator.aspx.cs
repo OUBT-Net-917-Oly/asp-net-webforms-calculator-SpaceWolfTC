@@ -15,7 +15,9 @@ namespace WebApplication1_empty
         }
         public static decimal number1=0;
         public static decimal number2=0;
-
+        public static decimal fresult = 0;
+        public static string sresult = "";
+        public static string btn = "";
 
         protected bool numberCheck()
         {
@@ -41,93 +43,70 @@ namespace WebApplication1_empty
             }
 
         }
+
+        protected void doMath(object sender, EventArgs e)
+        {
+            bool numCheck = numberCheck();
+            if (numCheck == true)
+            {
+
+                btn = (sender as Button).ID;
+                switch (btn)
+                {
+                    case "btnAdd":
+                        fresult = number1 + number2;
+                        sresult = Convert.ToString(fresult);
+
+                        //output to the result label
+                        result.Text = (sresult);
+                        break;
+                    case "btnSub":
+                        fresult = number1 - number2;
+                        sresult = Convert.ToString(fresult);
+
+                        //output to the result label
+                        result.Text = (sresult);
+                        break;
+                    case "btnMul":
+                        fresult = number1 * number2;
+                        sresult = Convert.ToString(fresult);
+
+                        //output to the result label
+                        result.Text = (sresult);
+                        break;
+                    case "btnDiv":
+                        if (number2 == 0)
+                        {
+                            Response.Write("You cannot divide by zero.");
+                            Number1.Text = String.Empty;
+                            Number2.Text = String.Empty;
+                            result.Text = String.Empty;
+                        }
+                        else
+                        {
+
+                            fresult = number1 / number2;
+                            sresult = Convert.ToString(fresult);
+                            String qresult = string.Format("{0:0.00}", fresult);
+                       
+                            result.Text = (qresult);
+                        }
+                        break;
+                }
+
+
+            }
+            else
+            {
+                Response.Write("Error received");
+                Number1.Text = String.Empty;
+                Number2.Text = String.Empty;
+                result.Text = String.Empty;
+            }
+
+        }
         
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-
-            bool numCheck = numberCheck();
-            if (numCheck == true)
-            {
-
-                decimal fresult = number1 + number2;
-                String sresult = Convert.ToString(fresult);
-
-                //output to the result label
-                result.Text = (sresult);
-            }
-            else
-            {
-                Response.Write("Error received");
-            }
-            //}
-   
-
-        }
-        protected void btnSub_Click(object sender, EventArgs e)
-        {
-            //you'll need to handle the error if they enter nothing... see resources for exception handling
-            bool numCheck = numberCheck();
-            if (numCheck==true)
-            {
-
-                decimal fresult = number1 - number2;
-                String sresult = Convert.ToString(fresult);
-
-                //output to the result label
-                result.Text = (sresult);
-            }
-            else
-            {
-                Response.Write("Error received");
-            }
-        }
-
-
-        protected void btnMul_Click(object sender, EventArgs e)
-        {
-            //you'll need to handle the error if they enter nothing... see resources for exception handling
-            bool numCheck = numberCheck();
-            if (numCheck == true)
-            {
-
-                decimal fresult = number1 * number2;
-                String sresult = Convert.ToString(fresult);
-
-                //output to the result label
-                result.Text = (sresult);
-            }
-            else
-            {
-                Response.Write("Error received");
-            }
-        }
-        protected void btnDiv_Click(object sender, EventArgs e)
-        {
-            //you'll need to handle the error if they enter nothing or if second number is zero... see resources for exception handling
-            bool numCheck = numberCheck();
-            if (numCheck == true)
-            {
-                if (number2 == 0)
-                {
-                    Response.Write("You cannot divide by zero.");
-                }
-                else
-                {
-
-                    decimal fresult = number1 / number2;
-                    String sresult = Convert.ToString(fresult);
-                    String qresult = string.Format("{0:0.00}", fresult);
-                    
-
-                    //output to the result label
-                    result.Text = (qresult);
-                }
-            }
-            else
-            {
-                Response.Write("Error received");
-            }
-        }
+       
     
         
     }
